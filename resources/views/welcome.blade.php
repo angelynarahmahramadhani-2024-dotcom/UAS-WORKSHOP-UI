@@ -197,10 +197,10 @@
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 @php
                     $classesMock = [
-                        ['id' => 1, 'judul' => 'Mastering LPDP Essay Writing', 'harga' => 'Rp150.000', 'desc' => 'Kelas intensif menyusun esai LPDP kontribusi dan rencana studi.', 'img' => 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=400&auto=format&fit=crop'],
-                        ['id' => 2, 'judul' => 'IELTS Preparation Bootcamp (7.0+)', 'harga' => 'Rp299.000', 'desc' => 'Pembahasan lengkap 4 skill IELTS dan bimbingan mentor.', 'img' => 'https://images.unsplash.com/photo-1546410531-bb4caa6b424d?q=80&w=400&auto=format&fit=crop'],
-                        ['id' => 3, 'judul' => 'Scholarship Interview Sim', 'harga' => 'Rp125.000', 'desc' => 'Latihan simulasi wawancara dengan STAR Method teruji.', 'img' => 'https://images.unsplash.com/photo-1521791136364-728685c05310?q=80&w=400&auto=format&fit=crop'],
-                        ['id' => 4, 'judul' => 'Mentorship Beasiswa MEXT Jepang', 'harga' => 'Rp199.000', 'desc' => 'Bimbingan administrasi dan pembahasan soal ujian tulis.', 'img' => 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=400&auto=format&fit=crop']
+                        ['id' => 1, 'judul' => 'Mastering LPDP Essay Writing', 'harga' => 'Rp150.000', 'desc' => 'Kelas intensif menyusun esai LPDP kontribusi dan rencana studi.', 'img' => 'https://picsum.photos/id/24/600/400'],
+                        ['id' => 2, 'judul' => 'IELTS Preparation Bootcamp (7.0+)', 'harga' => 'Rp299.000', 'desc' => 'Pembahasan lengkap 4 skill IELTS dan bimbingan mentor.', 'img' => 'https://picsum.photos/id/180/600/400'],
+                        ['id' => 3, 'judul' => 'Scholarship Interview Sim', 'harga' => 'Rp125.000', 'desc' => 'Latihan simulasi wawancara dengan STAR Method teruji.', 'img' => 'https://picsum.photos/id/20/600/400'],
+                        ['id' => 4, 'judul' => 'Mentorship Beasiswa MEXT Jepang', 'harga' => 'Rp199.000', 'desc' => 'Bimbingan administrasi dan pembahasan soal ujian tulis.', 'img' => 'https://picsum.photos/id/1062/600/400']
                     ];
                 @endphp
                 @foreach($classesMock as $cls)
