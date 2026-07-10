@@ -165,12 +165,14 @@ class KelasController extends Controller
             ->firstOrFail();
 
         if ($request->hasFile('bukti_bayar')) {
-            // Store file in storage/app/public/bukti-bayar
-            $path = $request->file('bukti_bayar')->store('bukti-bayar', 'public');
+            $file = $request->file('bukti_bayar');
+            $filename = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('storage/bukti-bayar'), $filename);
+            $buktiBayarPath = 'storage/bukti-bayar/' . $filename;
 
-            // Update database with 'storage/' prefix for asset mapping
+            // Update database with public storage path
             $transaction->update([
-                'bukti_bayar' => 'storage/' . $path,
+                'bukti_bayar' => $buktiBayarPath,
                 'status' => 'menunggu', // Reset status if they upload a new one after rejection
             ]);
 
@@ -369,8 +371,10 @@ class KelasController extends Controller
         $transactionId = 'TX-' . date('Ymd') . '-' . strtoupper(\Illuminate\Support\Str::random(6));
 
         if ($request->hasFile('bukti_bayar')) {
-            $path = $request->file('bukti_bayar')->store('bukti-bayar', 'public');
-            $buktiBayarPath = 'storage/' . $path;
+            $file = $request->file('bukti_bayar');
+            $filename = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('storage/bukti-bayar'), $filename);
+            $buktiBayarPath = 'storage/bukti-bayar/' . $filename;
 
             foreach ($classes as $class) {
                 Transaksi::create([
