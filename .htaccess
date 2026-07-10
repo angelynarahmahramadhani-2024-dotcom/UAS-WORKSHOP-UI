@@ -1,0 +1,22 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Izinkan akses langsung ke extract.php
+    RewriteCond %{REQUEST_URI} ^/extract\.php$ [NC]
+    RewriteRule ^ - [L]
+
+    # Mengarahkan semua request ke folder /public secara transparan
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
+
+# Set PHP upload limit to 10MB (Apache handler mode)
+<IfModule mod_php.c>
+    php_value upload_max_filesize 10M
+    php_value post_max_size 10M
+</IfModule>
+<IfModule mod_php7.c>
+    php_value upload_max_filesize 10M
+    php_value post_max_size 10M
+</IfModule>
+

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="100%" height="100%">
+  <!-- Icon: Compass Beacon Star -->
+  <g transform="translate(10, 15)">
+    <!-- Main 4-point star shapes -->
+    <!-- North/South/West/East points stylized -->
+    <path d="M 35 5 L 42 28 L 65 35 L 42 42 L 35 65 L 28 42 L 5 35 L 28 28 Z" fill="#B45309" />
+    <circle cx="35" cy="35" r="5" fill="#FFFFFF" />
+  </g>
+  
+  <!-- Wordmark -->
+  <text x="95" y="60" font-family="system-ui, -apple-system, sans-serif" font-size="34" font-weight="500" fill="#111827">Find<tspan font-weight="700" fill="#B45309">Ship</tspan></text>
+</svg>
