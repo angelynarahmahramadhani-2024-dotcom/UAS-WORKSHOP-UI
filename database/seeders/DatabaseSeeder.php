@@ -218,7 +218,7 @@ class DatabaseSeeder extends Seeder
                 'konten_publik' => 'Kuasai teknik wawancara beasiswa menggunakan metode STAR dan latih kesiapan mental Anda dalam simulasi interaktif.',
                 'konten_premium' => '<h3>Panduan Menjawab Wawancara Premium</h3><p>Gunakan format STAR (Situation, Task, Action, Result) untuk setiap jawaban perilaku Anda:</p><ul><li><strong>Situation:</strong> Berikan konteks masalah yang terjadi.</li><li><strong>Task:</strong> Apa tugas atau peran Anda dalam masalah tersebut.</li><li><strong>Action:</strong> Langkah nyata yang Anda ambil untuk menyelesaikannya.</li><li><strong>Result:</strong> Hasil kuantitatif positif yang dicapai.</li></ul>',
                 'harga' => 125000.00,
-                'thumbnail' => 'https://picsum.photos/id/20/600/400',
+                'thumbnail' => 'https://picsum.photos/id/357/600/400',
                 'file_materi' => 'materi-kelas/interview_star_method.pdf',
                 'link_zoom' => 'https://zoom.us/j/1122334455',
                 'link_rekaman' => 'https://www.youtube.com/embed/dQw4w9WgXcQ',
