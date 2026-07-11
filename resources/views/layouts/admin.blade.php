@@ -60,6 +60,10 @@
                     <svg class="w-5 h-5 {{ request()->routeIs('admin.kelas.*') ? 'text-[#F5A623]' : 'text-slate-400' }}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
                     Manajemen Kelas
                 </a>
+                <a href="{{ route('admin.artikel.index') }}" class="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-bold {{ request()->routeIs('admin.artikel.*') ? 'bg-white/10 text-white border-l-4 border-[#F5A623]' : 'text-slate-300 hover:bg-white/5 hover:text-white border-l-4 border-transparent' }} transition-all">
+                    <svg class="w-5 h-5 {{ request()->routeIs('admin.artikel.*') ? 'text-[#F5A623]' : 'text-slate-400' }}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 4a2 2 0 012 2v6a2 2 0 01-2 2h-2m-4-6h.01M5 8h2m-2 4h2m-2 4h2m4-8h2m-2 4h2m-2 4h2"></path></svg>
+                    Manajemen Artikel
+                </a>
                 <a href="{{ route('admin.verifikasi.index') }}" class="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-bold {{ request()->routeIs('admin.verifikasi.*') ? 'bg-white/10 text-white border-l-4 border-[#F5A623]' : 'text-slate-300 hover:bg-white/5 hover:text-white border-l-4 border-transparent' }} transition-all">
                     <svg class="w-5 h-5 {{ request()->routeIs('admin.verifikasi.*') ? 'text-[#F5A623]' : 'text-slate-400' }}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     Verifikasi Pembayaran

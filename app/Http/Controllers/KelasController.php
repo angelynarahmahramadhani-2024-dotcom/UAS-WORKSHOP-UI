@@ -382,7 +382,7 @@ class KelasController extends Controller
                     'kelas_id' => $class->id,
                     'bukti_bayar' => $buktiBayarPath,
                     'status' => 'menunggu',
-                    'transaction_id' => $transactionId,
+                    'transaction_id' => $transactionId . '-' . $class->id,
                     'payment_method' => $paymentMethod,
                     'discount_amount' => $discount / count($classes),
                     'service_fee' => $serviceFee / count($classes),
@@ -426,9 +426,16 @@ class KelasController extends Controller
     public function checkoutSuccess($transaction_id)
     {
         $transactions = Transaksi::with('kelas')
-            ->where('transaction_id', $transaction_id)
+            ->where('transaction_id', 'like', $transaction_id . '-%')
             ->where('user_id', Auth::id())
             ->get();
+
+        if ($transactions->isEmpty()) {
+            $transactions = Transaksi::with('kelas')
+                ->where('transaction_id', $transaction_id)
+                ->where('user_id', Auth::id())
+                ->get();
+        }
 
         if ($transactions->isEmpty()) {
             abort(404, 'Transaksi tidak ditemukan.');

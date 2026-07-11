@@ -2,35 +2,39 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\WordPressService;
+use App\Models\Artikel;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
 {
-    protected WordPressService $wpService;
-
-    public function __construct(WordPressService $wpService)
-    {
-        $this->wpService = $wpService;
-    }
-
     /**
      * Display list of blog posts.
      */
     public function index(Request $request)
     {
-        $page = $request->input('page', 1);
-        $posts = $this->wpService->getPosts(10, $page);
+        $search = $request->input('search');
+        
+        $query = Artikel::latest();
+        
+        if ($search) {
+            $query->where('title', 'like', "%{$search}%")
+                  ->orWhere('excerpt', 'like', "%{$search}%")
+                  ->orWhere('content', 'like', "%{$search}%");
+        }
+        
+        $posts = $query->paginate(9)->withQueryString();
 
-        return view('blog.index', compact('posts', 'page'));
+        return view('blog.index', compact('posts', 'search'));
     }
 
     /**
      * Display detailed content of a blog post.
      */
-    public function show(int $id)
+    public function show($idOrSlug)
     {
-        $post = $this->wpService->getPost($id);
+        $post = Artikel::where('id', $idOrSlug)
+            ->orWhere('slug', $idOrSlug)
+            ->first();
 
         if (!$post) {
             abort(404, 'Artikel tidak ditemukan.');
@@ -39,3 +43,4 @@ class BlogController extends Controller
         return view('blog.show', compact('post'));
     }
 }
+

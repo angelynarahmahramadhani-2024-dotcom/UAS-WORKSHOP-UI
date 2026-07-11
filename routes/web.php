@@ -6,6 +6,7 @@ use App\Http\Controllers\ScholarshipController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\AdminBeasiswaController;
 use App\Http\Controllers\AdminKelasController;
+use App\Http\Controllers\AdminArtikelController;
 use App\Http\Controllers\AdminVerifikasiController;
 use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\KelasController;
@@ -58,6 +59,9 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     
     // CRUD Kelas Premium
     Route::resource('kelas', AdminKelasController::class, ['as' => 'admin']);
+
+    // CRUD Artikel
+    Route::resource('artikel', AdminArtikelController::class, ['as' => 'admin']);
     
     // Verifikasi Pembayaran
     Route::get('/verifikasi', [AdminVerifikasiController::class, 'index'])->name('admin.verifikasi.index');
